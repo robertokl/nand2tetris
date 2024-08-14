@@ -1,0 +1,60 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch JackAnalyzer",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/jackAnalizer.js",
+            "args": [
+                "/Users/robertokl/Desktop/nand2tetris-download/projects/10/ArrayTest/",
+            ],
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch JackCompiler",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/jackCompiler.js",
+            "args": [
+                // "/Users/robertokl/Desktop/nand2tetris-download/projects/11/Square/",
+                "/Users/robertokl/Desktop/nand2tetris/jack/BitShift/",
+            ],
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch VMTranslator",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/vmtranslator.js",
+            "args": [
+                "/Users/robertokl/Desktop/nand2tetris/jack/BitShift/",
+            ],
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Assembler",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/assembler.js",
+            "args": [
+                "/Users/robertokl/Desktop/nand2tetris/jack/BitShift/BitShift.asm",
+                "b"
+            ],
+            "console": "internalConsole",
+            "outputCapture": "std",
+        }
+    ]
+}

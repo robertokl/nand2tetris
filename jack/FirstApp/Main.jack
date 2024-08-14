@@ -1,0 +1,12 @@
+class Main {
+    function void main() {
+        var Greeter greeter1, greeter2;
+        let greeter1 = Greeter.new();
+        let greeter2 = Greeter.new();
+        do greeter1.getInfo();
+        do greeter2.getInfo();
+        do greeter1.displayGreetings();
+        do greeter2.displayGreetings();
+        return;
+    }
+}

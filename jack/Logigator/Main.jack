@@ -1,0 +1,201 @@
+class Main {
+    function void main() {
+        // var int i, j;
+        // let j = 16;
+        // while (j < 32) {
+        //     let i = 0;
+        //     while (i < 64) {
+        //         do Screen.drawPixel(j, i);
+        //         let i = i + 1;
+        //     }
+        //     let j = j + 1;
+        // }
+
+        // let i = 25639;
+        // while (i > 32459) {
+            // do Memory.poke(i, -1);
+            // do Memory.poke(32735, -1);
+            // do Memory.poke(32543, -1);
+            // do Screen.refresh();
+            // let i = i - 1;
+        // }
+
+        // var String x;
+        // let x = String.new(10);
+        // do Output.println();
+        // let x = "0123455";
+        // do Output.printString(x);
+        // do Output.backSpace();
+        // // do Output.moveCursor(3, 4);
+        // let x = "6789";
+        // do Output.printString(x);
+        // do Screen.refresh();
+
+        // var String h, w;
+        // var int i;
+        // let h = "Hello";
+        // let w = "World!";
+        // let i = 0;
+        // while (true) {
+        //     do Screen.clearScreen();
+        //     do Output.moveCursor(i, 0);
+        //     do Output.printString(h);
+        //     do Output.println();
+        //     do Output.printString(w);
+        //     do Screen.refresh();
+        //     if (i > 0) {
+        //         let i = 0;
+        //     } else {
+        //         let i = 2;
+        //     }
+        // }
+
+        var String str;
+        var int i, j, x, addr;
+        var boolean carry;
+        let str = "Hello";
+        do Output.moveCursor(0, 3);
+        do Output.printString(str);
+        do Screen.refresh();
+        let i = 0;
+        while (true) {
+            let j = 0;
+            while (j < 8) {
+                let addr = Screen.getAddress(j, 0);
+                let x = Memory.peek(addr);
+                let carry = false;
+                if (Math.bit(x, 0)) {
+                    let carry = true;
+                }
+                let carry = moveChar(carry, j, 56);
+                let carry = moveChar(carry, j, 48);
+                let carry = moveChar(carry, j, 40);
+                let carry = moveChar(carry, j, 32);
+                let carry = moveChar(carry, j, 24);
+                let carry = moveChar(carry, j, 16);
+                let carry = moveChar(carry, j, 8);
+                let carry = moveChar(carry, j, 0);
+                let j = j + 1;
+            }
+            do Screen.refresh();
+            let i = i + 1;
+        }
+
+
+        // do Screen.drawPixel(1,6);
+        // do Screen.drawPixel(1,12);
+        // do Screen.drawPixel(2,7);
+        // do Screen.drawPixel(2,11);
+        // do Screen.drawPixel(3,8);
+        // do Screen.drawPixel(3,10);
+        // do Screen.drawPixel(4,6);
+        // do Screen.drawPixel(4,7);
+        // do Screen.drawPixel(4,8);
+        // do Screen.drawPixel(4,9);
+        // do Screen.drawPixel(4,10);
+        // do Screen.drawPixel(4,11);
+        // do Screen.drawPixel(4,12);
+        // do Screen.drawPixel(5,6);
+        // do Screen.drawPixel(5,8);
+        // do Screen.drawPixel(5,10);
+        // do Screen.drawPixel(5,12);
+        // do Screen.drawPixel(6,6);
+        // do Screen.drawPixel(6,12);
+        // do Screen.drawPixel(7,1);
+        // do Screen.drawPixel(7,2);
+        // do Screen.drawPixel(7,3);
+        // do Screen.drawPixel(7,6);
+        // do Screen.drawPixel(7,7);
+        // do Screen.drawPixel(7,8);
+        // do Screen.drawPixel(7,9);
+        // do Screen.drawPixel(7,10);
+        // do Screen.drawPixel(7,11);
+        // do Screen.drawPixel(7,12);
+        // do Screen.drawPixel(7,15);
+        // do Screen.drawPixel(7,16);
+        // do Screen.drawPixel(7,17);
+        // do Screen.drawPixel(8,1);
+        // do Screen.drawPixel(8,3);
+        // do Screen.drawPixel(8,4);
+        // do Screen.drawPixel(8,5);
+        // do Screen.drawPixel(8,6);
+        // do Screen.drawPixel(8,12);
+        // do Screen.drawPixel(8,13);
+        // do Screen.drawPixel(8,14);
+        // do Screen.drawPixel(8,15);
+        // do Screen.drawPixel(8,17);
+        // do Screen.drawPixel(9,1);
+        // do Screen.drawPixel(9,2);
+        // do Screen.drawPixel(9,3);
+        // do Screen.drawPixel(9,4);
+        // do Screen.drawPixel(9,14);
+        // do Screen.drawPixel(9,15);
+        // do Screen.drawPixel(9,16);
+        // do Screen.drawPixel(9,17);
+        // do Screen.drawPixel(10,4);
+        // do Screen.drawPixel(10,7);
+        // do Screen.drawPixel(10,8);
+        // do Screen.drawPixel(10,9);
+        // do Screen.drawPixel(10,10);
+        // do Screen.drawPixel(10,11);
+        // do Screen.drawPixel(10,14);
+        // do Screen.drawPixel(11,4);
+        // do Screen.drawPixel(11,7);
+        // do Screen.drawPixel(11,11);
+        // do Screen.drawPixel(11,14);
+        // do Screen.drawPixel(12,4);
+        // do Screen.drawPixel(12,7);
+        // do Screen.drawPixel(12,8);
+        // do Screen.drawPixel(12,9);
+        // do Screen.drawPixel(12,10);
+        // do Screen.drawPixel(12,11);
+        // do Screen.drawPixel(12,14);
+        // do Screen.drawPixel(13,1);
+        // do Screen.drawPixel(13,2);
+        // do Screen.drawPixel(13,3);
+        // do Screen.drawPixel(13,4);
+        // do Screen.drawPixel(13,14);
+        // do Screen.drawPixel(13,15);
+        // do Screen.drawPixel(13,16);
+        // do Screen.drawPixel(13,17);
+        // do Screen.drawPixel(14,1);
+        // do Screen.drawPixel(14,3);
+        // do Screen.drawPixel(14,4);
+        // do Screen.drawPixel(14,5);
+        // do Screen.drawPixel(14,6);
+        // do Screen.drawPixel(14,7);
+        // do Screen.drawPixel(14,8);
+        // do Screen.drawPixel(14,9);
+        // do Screen.drawPixel(14,10);
+        // do Screen.drawPixel(14,11);
+        // do Screen.drawPixel(14,12);
+        // do Screen.drawPixel(14,13);
+        // do Screen.drawPixel(14,14);
+        // do Screen.drawPixel(14,15);
+        // do Screen.drawPixel(14,17);
+        // do Screen.drawPixel(15,1);
+        // do Screen.drawPixel(15,2);
+        // do Screen.drawPixel(15,3);
+        // do Screen.drawPixel(15,15);
+        // do Screen.drawPixel(15,16);
+        // do Screen.drawPixel(15,17);
+        return;
+    }
+
+    function boolean moveChar(boolean carryOver, int row, int col) {
+        var int addr, x;
+        var boolean carryForward;
+        let addr = Screen.getAddress(row, col);
+        let x = Memory.peek(addr);
+        if (carryOver) {
+            let x = x + 256;
+        }
+        let carryForward = false;
+        if (Math.bit(x, 0)) {
+            let carryForward = true;
+        }
+        let x = >>x;
+        do Memory.poke(addr, x);
+        return carryForward;
+    }
+}

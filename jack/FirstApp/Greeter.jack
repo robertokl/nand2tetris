@@ -1,0 +1,35 @@
+class Greeter {
+    field String name;
+    field int hourOfDay;
+
+    constructor Greeter new() {
+        do Screen.clearScreen();
+        return this;
+    }
+
+   /** Disposes this square. */
+   method void dispose() {
+      do Memory.deAlloc(this);
+      return;
+   }
+
+    method void getInfo() {
+        let name = Keyboard.readLine("What's your name? ");
+        let hourOfDay = Keyboard.readInt("What time of the day is now? ");
+        return;
+    }
+
+    method void displayGreetings() {
+        var String greeting;
+        if ((hourOfDay > 5) & (hourOfDay < 13)) { let greeting = "Good morning"; }
+        if ((hourOfDay > 12) & (hourOfDay < 19)) { let greeting = "Good afternoon"; }
+        if ((hourOfDay > 18) | (hourOfDay < 6)) { let greeting = "Good night"; }
+        do Output.printString("Hello, ");
+        do Output.printString(name);
+        do Output.printString(". ");
+        do Output.printString(greeting);
+        do Output.printString(".");
+        do Output.println();
+        return;
+    }
+}

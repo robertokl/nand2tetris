@@ -1,0 +1,95 @@
+function Main.main 0
+    label BEGIN
+        push constant 32576
+        push constant 32126 // H
+        call Sys.printLetter 2
+        push constant 32543
+        push constant 32105 // E
+        call Sys.printLetter 2
+        push constant 32544
+        push constant 32154 // L
+        call Sys.printLetter 2
+        push constant 32511
+        push constant 32154 // L
+        call Sys.printLetter 2
+        push constant 32512
+        push constant 32189 // O
+        call Sys.printLetter 2
+        push constant 32592
+        push constant 32231 // W
+        call Sys.printLetter 2
+        push constant 32559
+        push constant 32189 // O
+        call Sys.printLetter 2
+        push constant 32560
+        push constant 32196 // R
+        call Sys.printLetter 2
+        push constant 32527
+        push constant 32154 // L
+        call Sys.printLetter 2
+        push constant 32528
+        push constant 32098 // D
+        call Sys.printLetter 2
+
+
+        push constant 32576
+        push constant 31622
+        call Sys.printLetter 2
+        push constant 32543
+        push constant 31622
+        call Sys.printLetter 2
+        push constant 32544
+        push constant 31622
+        call Sys.printLetter 2
+        push constant 32511
+        push constant 31622
+        call Sys.printLetter 2
+        push constant 32512
+        push constant 31622
+        call Sys.printLetter 2
+        push constant 32592
+        push constant 31622
+        call Sys.printLetter 2
+        push constant 32559
+        push constant 31622
+        call Sys.printLetter 2
+        push constant 32560
+        push constant 31622
+        call Sys.printLetter 2
+        push constant 32527
+        push constant 31622
+        call Sys.printLetter 2
+        push constant 32528
+        push constant 31622
+        call Sys.printLetter 2
+    goto BEGIN
+    push constant 0
+    return
+
+//function Main.main 2
+//    push constant 10
+//    pop local 0
+//    push constant 0
+//    pop local 1
+//    push local 1
+//label LOOP
+//    call Main.print 1
+//    push local 1
+//    push constant 1
+//    add
+//    pop local 1
+//    push local 0
+//    push local 1
+//    eq
+//    if-goto ENDMAIN
+//    push local 1
+//    goto LOOP
+//label ENDMAIN
+//    return
+//
+//function Main.print 1
+//    push argument 0
+//    pop local 0
+//    push constant 0
+//    push constant 0
+//    return

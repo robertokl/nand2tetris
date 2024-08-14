@@ -1,0 +1,6 @@
+class Main() {
+    function main() {
+        Output.printInt(Math.abs(-30));
+        return;
+    }
+}

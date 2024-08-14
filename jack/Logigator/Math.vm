@@ -1,0 +1,343 @@
+function Math.init 1
+push constant 16
+pop static 0
+push constant 7
+pop static 1
+push static 0
+call Array.new 1
+pop static 2
+push static 2
+push constant 0
+add
+push constant 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+pop local 0
+label Math.while$1
+push local 0
+push static 0
+lt
+not
+if-goto Math.whileEnd$1
+push static 2
+push local 0
+add
+push static 2
+push local 0
+push constant 1
+sub
+add
+pop pointer 1
+push that 0
+push static 2
+push local 0
+push constant 1
+sub
+add
+pop pointer 1
+push that 0
+add
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0
+push constant 1
+add
+pop local 0
+goto Math.while$1
+label Math.whileEnd$1
+push constant 0
+return
+function Math.bit 0
+push static 2
+push argument 1
+add
+pop pointer 1
+push that 0
+push argument 0
+and
+push constant 0
+eq
+not
+return
+function Math.powerOfTwo 0
+push static 2
+push argument 0
+add
+pop pointer 1
+push that 0
+return
+function Math.multiply 3
+push constant 0
+pop local 0
+push argument 0
+pop local 1
+push constant 0
+pop local 2
+label Math.while$2
+push local 2
+push static 0
+lt
+not
+if-goto Math.whileEnd$2
+push argument 1
+push local 2
+call Math.bit 2
+not
+if-goto Math.ifFalse$3
+push local 0
+push local 1
+add
+pop local 0
+goto Math.ifEnd$3
+label Math.ifFalse$3
+label Math.ifEnd$3
+push local 1
+push local 1
+add
+pop local 1
+push local 2
+push constant 1
+add
+pop local 2
+goto Math.while$2
+label Math.whileEnd$2
+push local 0
+return
+function Math.divide 2
+push constant 1
+pop local 0
+push argument 0
+push constant 0
+lt
+not
+if-goto Math.ifFalse$4
+push constant 1
+neg
+pop local 0
+goto Math.ifEnd$4
+label Math.ifFalse$4
+label Math.ifEnd$4
+push argument 1
+push constant 0
+lt
+not
+if-goto Math.ifFalse$5
+push local 0
+neg
+pop local 0
+goto Math.ifEnd$5
+label Math.ifFalse$5
+label Math.ifEnd$5
+push argument 0
+call Math.abs 1
+push argument 1
+call Math.abs 1
+call Math.divideAbs 2
+pop local 1
+push local 0
+push constant 0
+lt
+not
+if-goto Math.ifFalse$6
+push local 1
+neg
+pop local 1
+goto Math.ifEnd$6
+label Math.ifFalse$6
+label Math.ifEnd$6
+push local 1
+return
+function Math.divideAbs 2
+push argument 1
+push argument 0
+gt
+push argument 1
+push constant 0
+lt
+or
+not
+if-goto Math.ifFalse$7
+push constant 0
+return
+goto Math.ifEnd$7
+label Math.ifFalse$7
+label Math.ifEnd$7
+push argument 0
+push argument 1
+push argument 1
+add
+call Math.divideAbs 2
+pop local 0
+push local 0
+push argument 1
+call Math.multiply 2
+pop local 1
+push argument 0
+push local 1
+push local 1
+add
+sub
+push argument 1
+lt
+not
+if-goto Math.ifFalse$8
+push local 0
+push local 0
+add
+return
+goto Math.ifEnd$8
+label Math.ifFalse$8
+label Math.ifEnd$8
+push local 0
+push local 0
+add
+push constant 1
+add
+return
+function Math.sqrt 5
+push constant 0
+pop local 0
+push static 1
+pop local 1
+label Math.while$9
+push local 1
+push constant 1
+neg
+gt
+not
+if-goto Math.whileEnd$9
+push static 2
+push local 1
+add
+pop pointer 1
+push that 0
+pop local 2
+push local 0
+push local 2
+add
+pop local 3
+push local 3
+push local 3
+call Math.multiply 2
+pop local 4
+push local 4
+push constant 1
+sub
+push argument 0
+lt
+push local 4
+push constant 0
+gt
+and
+not
+if-goto Math.ifFalse$10
+push local 3
+pop local 0
+goto Math.ifEnd$10
+label Math.ifFalse$10
+label Math.ifEnd$10
+push local 1
+push constant 1
+sub
+pop local 1
+goto Math.while$9
+label Math.whileEnd$9
+push local 0
+return
+function Math.max 0
+push argument 0
+push argument 1
+gt
+not
+if-goto Math.ifFalse$11
+push argument 0
+return
+goto Math.ifEnd$11
+label Math.ifFalse$11
+label Math.ifEnd$11
+push argument 1
+return
+function Math.min 0
+push argument 0
+push argument 1
+lt
+not
+if-goto Math.ifFalse$12
+push argument 0
+return
+goto Math.ifEnd$12
+label Math.ifFalse$12
+label Math.ifEnd$12
+push argument 1
+return
+function Math.abs 0
+push argument 0
+push constant 0
+lt
+not
+if-goto Math.ifFalse$13
+push argument 0
+neg
+return
+goto Math.ifEnd$13
+label Math.ifFalse$13
+label Math.ifEnd$13
+push argument 0
+return
+function Math.mod 0
+push argument 0
+push argument 1
+push argument 0
+push argument 1
+call Math.divide 2
+call Math.multiply 2
+sub
+return
+function Math.divideBy2 1
+push argument 0
+push constant 0
+eq
+not
+if-goto Math.ifFalse$14
+push constant 0
+return
+goto Math.ifEnd$14
+label Math.ifFalse$14
+label Math.ifEnd$14
+push constant 1
+pop local 0
+label Math.while$15
+push local 0
+push local 0
+add
+push argument 0
+lt
+not
+if-goto Math.whileEnd$15
+push local 0
+push local 0
+add
+pop local 0
+goto Math.while$15
+label Math.whileEnd$15
+label Math.while$16
+push local 0
+push local 0
+add
+push argument 0
+gt
+not
+if-goto Math.whileEnd$16
+push local 0
+push constant 1
+sub
+pop local 0
+goto Math.while$16
+label Math.whileEnd$16
+push local 0
+return

@@ -1,0 +1,9 @@
+function Main.main 1
+push constant 16
+push constant 16
+push constant 240
+push constant 240
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+return

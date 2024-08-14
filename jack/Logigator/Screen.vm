@@ -1,0 +1,194 @@
+function Screen.init 0
+push constant 0
+not
+pop static 0
+push constant 0
+return
+function Screen.setColor 0
+push argument 0
+pop static 0
+push constant 0
+return
+function Screen.clearScreen 1
+push constant 32767
+pop local 0
+label Screen.while$1
+push local 0
+push constant 32510
+gt
+not
+if-goto Screen.whileEnd$1
+push local 0
+push constant 0
+call Memory.poke 2
+pop temp 0
+push local 0
+push constant 1
+sub
+pop local 0
+goto Screen.while$1
+label Screen.whileEnd$1
+push constant 0
+return
+function Screen.drawPixel 2
+push argument 0
+push argument 1
+call Screen.getAddress 2
+pop local 0
+push argument 1
+push constant 8
+call Math.mod 2
+pop argument 1
+push argument 1
+call Math.powerOfTwo 1
+pop local 1
+push static 0
+not
+if-goto Screen.ifFalse$2
+push local 0
+call Memory.peek 1
+push local 1
+or
+pop local 1
+goto Screen.ifEnd$2
+label Screen.ifFalse$2
+push local 0
+call Memory.peek 1
+push local 1
+not
+and
+pop local 1
+label Screen.ifEnd$2
+push local 0
+push local 1
+call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Screen.refresh 0
+refreshScreen
+push constant 0
+return
+function Screen.getAddress 1
+push argument 0
+push constant 16
+lt
+not
+if-goto Screen.ifFalse$3
+push constant 32607
+pop local 0
+goto Screen.ifEnd$3
+label Screen.ifFalse$3
+push argument 0
+push constant 16
+sub
+pop argument 0
+push constant 32735
+pop local 0
+label Screen.ifEnd$3
+push argument 1
+push constant 7
+gt
+push argument 1
+push constant 16
+lt
+and
+not
+if-goto Screen.ifFalse$4
+push local 0
+push constant 1
+add
+pop local 0
+goto Screen.ifEnd$4
+label Screen.ifFalse$4
+push argument 1
+push constant 15
+gt
+push argument 1
+push constant 32
+lt
+and
+not
+if-goto Screen.ifFalse$5
+push local 0
+push constant 32
+sub
+pop local 0
+push argument 1
+push constant 23
+gt
+not
+if-goto Screen.ifFalse$6
+push local 0
+push constant 1
+add
+pop local 0
+goto Screen.ifEnd$6
+label Screen.ifFalse$6
+label Screen.ifEnd$6
+goto Screen.ifEnd$5
+label Screen.ifFalse$5
+push argument 1
+push constant 31
+gt
+push argument 1
+push constant 48
+lt
+and
+not
+if-goto Screen.ifFalse$7
+push local 0
+push constant 64
+sub
+pop local 0
+push argument 1
+push constant 39
+gt
+not
+if-goto Screen.ifFalse$8
+push local 0
+push constant 1
+add
+pop local 0
+goto Screen.ifEnd$8
+label Screen.ifFalse$8
+label Screen.ifEnd$8
+goto Screen.ifEnd$7
+label Screen.ifFalse$7
+push argument 1
+push constant 47
+gt
+push argument 1
+push constant 64
+lt
+and
+not
+if-goto Screen.ifFalse$9
+push local 0
+push constant 96
+sub
+pop local 0
+push argument 1
+push constant 55
+gt
+not
+if-goto Screen.ifFalse$10
+push local 0
+push constant 1
+add
+pop local 0
+goto Screen.ifEnd$10
+label Screen.ifFalse$10
+label Screen.ifEnd$10
+goto Screen.ifEnd$9
+label Screen.ifFalse$9
+label Screen.ifEnd$9
+label Screen.ifEnd$7
+label Screen.ifEnd$5
+label Screen.ifEnd$4
+push local 0
+push argument 0
+add
+push argument 0
+add
+return

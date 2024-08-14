@@ -1,0 +1,559 @@
+function Output.init 0
+push constant 0
+pop static 1
+push constant 0
+pop static 2
+push constant 3
+pop static 3
+push constant 7
+pop static 4
+call Output.initMap 0
+pop temp 0
+push constant 0
+return
+function Output.initMap 1
+push constant 127
+call Array.new 1
+pop static 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+call Output.create 8
+pop temp 0
+push constant 32
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+push constant 0
+call Output.create 9
+pop temp 0
+push constant 33
+push constant 7
+push constant 7
+push constant 7
+push constant 7
+push constant 2
+push constant 0
+push constant 2
+call Output.create 8
+pop temp 0
+push constant 48
+push constant 28
+push constant 34
+push constant 103
+push constant 107
+push constant 115
+push constant 34
+push constant 28
+call Output.create 8
+pop temp 0
+push constant 49
+push constant 28
+push constant 30
+push constant 24
+push constant 24
+push constant 24
+push constant 24
+push constant 127
+call Output.create 8
+pop temp 0
+push constant 50
+push constant 62
+push constant 35
+push constant 96
+push constant 56
+push constant 28
+push constant 6
+push constant 127
+call Output.create 8
+pop temp 0
+push constant 51
+push constant 62
+push constant 99
+push constant 96
+push constant 56
+push constant 96
+push constant 99
+push constant 62
+call Output.create 8
+pop temp 0
+push constant 52
+push constant 99
+push constant 99
+push constant 99
+push constant 127
+push constant 96
+push constant 96
+push constant 96
+call Output.create 8
+pop temp 0
+push constant 53
+push constant 127
+push constant 3
+push constant 3
+push constant 127
+push constant 96
+push constant 99
+push constant 62
+call Output.create 8
+pop temp 0
+push constant 54
+push constant 62
+push constant 99
+push constant 3
+push constant 63
+push constant 99
+push constant 99
+push constant 62
+call Output.create 8
+pop temp 0
+push constant 55
+push constant 127
+push constant 97
+push constant 96
+push constant 96
+push constant 56
+push constant 12
+push constant 12
+call Output.create 8
+pop temp 0
+push constant 56
+push constant 62
+push constant 99
+push constant 99
+push constant 62
+push constant 99
+push constant 99
+push constant 62
+call Output.create 8
+pop temp 0
+push constant 57
+push constant 62
+push constant 99
+push constant 99
+push constant 126
+push constant 96
+push constant 99
+push constant 62
+call Output.create 8
+pop temp 0
+push constant 72
+push constant 99
+push constant 99
+push constant 99
+push constant 127
+push constant 99
+push constant 99
+push constant 99
+call Output.create 8
+pop temp 0
+push constant 79
+push constant 62
+push constant 99
+push constant 99
+push constant 99
+push constant 99
+push constant 99
+push constant 62
+call Output.create 8
+pop temp 0
+push constant 87
+push constant 99
+push constant 99
+push constant 99
+push constant 99
+push constant 107
+push constant 107
+push constant 62
+call Output.create 8
+pop temp 0
+push constant 100
+push constant 0
+push constant 96
+push constant 96
+push constant 126
+push constant 99
+push constant 99
+push constant 126
+call Output.create 8
+pop temp 0
+push constant 101
+push constant 0
+push constant 62
+push constant 99
+push constant 99
+push constant 63
+push constant 3
+push constant 62
+call Output.create 8
+pop temp 0
+push constant 108
+push constant 0
+push constant 14
+push constant 12
+push constant 12
+push constant 12
+push constant 12
+push constant 24
+call Output.create 8
+pop temp 0
+push constant 111
+push constant 0
+push constant 62
+push constant 99
+push constant 99
+push constant 99
+push constant 99
+push constant 62
+call Output.create 8
+pop temp 0
+push constant 114
+push constant 0
+push constant 59
+push constant 103
+push constant 3
+push constant 3
+push constant 3
+push constant 3
+call Output.create 8
+pop temp 0
+push constant 119
+push constant 0
+push constant 99
+push constant 99
+push constant 99
+push constant 107
+push constant 107
+push constant 62
+call Output.create 8
+pop temp 0
+push constant 0
+return
+function Output.create 1
+push constant 8
+call Array.new 1
+pop local 0
+push static 0
+push argument 0
+add
+push local 0
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0
+push constant 0
+add
+push argument 1
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0
+push constant 1
+add
+push argument 2
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0
+push constant 2
+add
+push argument 3
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0
+push constant 3
+add
+push argument 4
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0
+push constant 4
+add
+push argument 5
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0
+push constant 5
+add
+push argument 6
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0
+push constant 6
+add
+push argument 7
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push local 0
+push constant 7
+add
+push argument 8
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 0
+return
+function Output.getMap 0
+push argument 0
+push constant 32
+lt
+push argument 0
+push constant 126
+gt
+or
+not
+if-goto Output.ifFalse$1
+push constant 0
+pop argument 0
+goto Output.ifEnd$1
+label Output.ifFalse$1
+label Output.ifEnd$1
+push static 0
+push argument 0
+add
+pop pointer 1
+push that 0
+return
+function Output.moveCursor 0
+push argument 0
+pop static 1
+push argument 1
+pop static 2
+push constant 0
+return
+function Output.printChar 5
+push argument 0
+push constant 128
+eq
+not
+if-goto Output.ifFalse$2
+call Output.println 0
+pop temp 0
+push constant 0
+return
+goto Output.ifEnd$2
+label Output.ifFalse$2
+label Output.ifEnd$2
+push static 2
+push constant 8
+call Math.multiply 2
+pop local 1
+push static 1
+push constant 8
+call Math.multiply 2
+pop local 0
+push static 0
+push argument 0
+add
+pop pointer 1
+push that 0
+pop local 4
+push constant 0
+pop local 3
+label Output.while$3
+push local 3
+push constant 7
+lt
+not
+if-goto Output.whileEnd$3
+push local 0
+push local 3
+add
+push local 1
+call Screen.getAddress 2
+pop local 2
+push local 2
+push local 4
+push local 3
+add
+pop pointer 1
+push that 0
+call Memory.poke 2
+pop temp 0
+push local 3
+push constant 1
+add
+pop local 3
+goto Output.while$3
+label Output.whileEnd$3
+push static 2
+push constant 1
+add
+pop static 2
+push static 2
+push static 4
+gt
+not
+if-goto Output.ifFalse$4
+call Output.println 0
+pop temp 0
+goto Output.ifEnd$4
+label Output.ifFalse$4
+label Output.ifEnd$4
+push constant 0
+return
+function Output.printString 1
+push constant 0
+pop local 0
+label Output.while$5
+push local 0
+push argument 0
+call String.length 1
+lt
+not
+if-goto Output.whileEnd$5
+push argument 0
+push local 0
+call String.charAt 2
+call Output.printChar 1
+pop temp 0
+push local 0
+push constant 1
+add
+pop local 0
+goto Output.while$5
+label Output.whileEnd$5
+push constant 0
+return
+function Output.printInt 3
+push constant 0
+pop local 0
+push argument 0
+call Math.abs 1
+pop local 1
+label Output.while$6
+push local 1
+push constant 0
+gt
+not
+if-goto Output.whileEnd$6
+push local 0
+push constant 1
+add
+pop local 0
+push local 1
+push constant 10
+call Math.divide 2
+pop local 1
+goto Output.while$6
+label Output.whileEnd$6
+push argument 0
+push constant 0
+lt
+not
+if-goto Output.ifFalse$7
+push local 1
+push argument 0
+eq
+not
+if-goto Output.ifFalse$8
+push constant 6
+pop local 0
+goto Output.ifEnd$8
+label Output.ifFalse$8
+push local 0
+push constant 1
+add
+pop local 0
+label Output.ifEnd$8
+goto Output.ifEnd$7
+label Output.ifFalse$7
+label Output.ifEnd$7
+push local 0
+call String.new 1
+pop local 2
+push local 2
+push argument 0
+call String.setInt 2
+pop temp 0
+push local 2
+call Output.printString 1
+pop temp 0
+push constant 0
+return
+function Output.println 0
+push static 1
+push constant 1
+add
+pop static 1
+push static 1
+push static 3
+gt
+not
+if-goto Output.ifFalse$9
+push constant 0
+pop static 1
+goto Output.ifEnd$9
+label Output.ifFalse$9
+label Output.ifEnd$9
+push constant 0
+pop static 2
+push constant 0
+return
+function Output.backSpace 2
+push static 1
+pop local 1
+push static 2
+push constant 1
+sub
+pop local 0
+push local 0
+push constant 1
+lt
+not
+if-goto Output.ifFalse$10
+push static 4
+pop local 0
+push static 1
+push constant 1
+sub
+pop local 1
+goto Output.ifEnd$10
+label Output.ifFalse$10
+label Output.ifEnd$10
+push local 1
+push constant 1
+lt
+not
+if-goto Output.ifFalse$11
+push static 3
+pop local 1
+goto Output.ifEnd$11
+label Output.ifFalse$11
+label Output.ifEnd$11
+push local 0
+pop static 2
+push local 1
+pop static 1
+push constant 0
+call Output.printChar 1
+pop temp 0
+push local 0
+pop static 2
+push local 1
+pop static 1
+push constant 0
+return

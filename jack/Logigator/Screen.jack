@@ -1,0 +1,77 @@
+class Screen {
+    static boolean color;
+
+    function void init() {
+        let color = true;
+        return;
+    }
+
+    function void setColor(boolean colorA) {
+        let color = colorA;
+        return;
+    }
+
+    function void clearScreen() {
+        var int i;
+        let i = 32767;
+        while (i > 32510) {
+            do Memory.poke(i, 0);
+            let i = i - 1;
+        }
+        return;
+    }
+
+    function void drawPixel(int row, int col) {
+        var int memLoc, memVal;
+        let memLoc = getAddress(row, col);
+        let col = col % 8;
+        let memVal = Math.powerOfTwo(col);
+        if (color) {
+            let memVal = Memory.peek(memLoc) | memVal;
+        } else {
+            let memVal = Memory.peek(memLoc) & (~memVal);
+        }
+        do Memory.poke(memLoc, memVal);
+        return;
+    }
+
+    function void refresh() {
+        refreshScreen();
+        return;
+    }
+
+    function int getAddress(int row, int col) {
+        var int baseAddr;
+        if (row < 16) {
+            let baseAddr = 32607;
+        } else {
+            let row = row - 16;
+            let baseAddr = 32735;
+        }
+        if ((col > 7) & (col < 16)) {
+            let baseAddr = baseAddr + 1;
+        } else {
+            if ((col > 15) & (col < 32)) {
+                let baseAddr = baseAddr - 32;
+                if (col > 23) {
+                    let baseAddr = baseAddr + 1;
+                }
+            } else {
+                if ((col > 31) & (col < 48)) {
+                    let baseAddr = baseAddr - 64;
+                    if (col > 39) {
+                        let baseAddr = baseAddr + 1;
+                    }
+                } else {
+                    if ((col > 47) & (col < 64)) {
+                        let baseAddr = baseAddr - 96;
+                        if (col > 55) {
+                            let baseAddr = baseAddr + 1;
+                        }
+                    }
+                }
+            }
+        }
+        return (baseAddr + row + row);
+    }
+}
